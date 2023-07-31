@@ -1,0 +1,33 @@
+.sidebarContainer {
+  width: 100%;
+  max-width: 330px;
+  height: 90vh;
+  background-color: #f1f1f1;
+  margin-left: 50px;
+}
+
+.sidebarHeader {
+  padding: 20px;
+}
+
+.inputWrapper label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.sidebarContainer button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.sidebarContainer button:hover {
+  background-color: #666;
+}

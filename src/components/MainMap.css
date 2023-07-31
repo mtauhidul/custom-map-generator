@@ -1,0 +1,28 @@
+.marker {
+  /* Create the styles for that so that it will look good and don't use image */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #000;
+  border: 2px solid #fff;
+  cursor: pointer;
+  /* Prevents the marker from being highlighted */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marker:hover {
+  z-index: 1;
+}
+
+.markerText {
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
