@@ -5,11 +5,18 @@ import Sidebar from './components/Sidebar';
 
 const App = () => {
   const [data, setData] = useState([]);
+  const [targetData, setTargetData] = useState([]);
   const [loading, setLoading] = useState(false);
   return (
     <div className='mainContainer'>
-      <Sidebar mapData={data} setMapData={setData} setLoading={setLoading} />
-      <Map data={data} loading={loading} />
+      <Sidebar
+        mapData={data}
+        setMapData={setData}
+        targetMapData={targetData}
+        setTargetMapData={setTargetData}
+        setLoading={setLoading}
+      />
+      <Map data={data} targetData={targetData} loading={loading} />
     </div>
   );
 };

@@ -26,3 +26,30 @@
   font-weight: bold;
   text-align: center;
 }
+
+.targetMarker {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: orange;
+  /* Make transparent background */
+  opacity: 0.5;
+
+  border: 3px solid green;
+  cursor: pointer;
+  /* Prevents the marker from being highlighted */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.targetMarkerText {
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}

@@ -2,9 +2,17 @@ import React, { useState } from 'react';
 import readXlsxFile from 'read-excel-file';
 import './Sidebar.css';
 
-const Sidebar = ({ mapData, setMapData, setLoading }) => {
+const Sidebar = ({
+  mapData,
+  setMapData,
+  setLoading,
+  targetMapData,
+  setTargetMapData,
+}) => {
   const [data, setData] = useState([]);
+  const [targetData, setTargetData] = useState([]);
   const [latAndLng, setLatAndLng] = useState([]);
+  const [targetLatAndLng, setTargetLatAndLng] = useState([]);
   const [working, setWorking] = useState(false);
 
   const handleFileUpload = (e) => {
@@ -20,11 +28,23 @@ const Sidebar = ({ mapData, setMapData, setLoading }) => {
         };
       });
 
+      const targetNewData = rows.map((row) => {
+        return {
+          zip: row[16],
+        };
+      });
+
       const filteredData = newData.filter((row) => {
         return row.zip !== null && row.dre !== null;
       });
 
+      const targetFilteredData = targetNewData.filter((row) => {
+        return row.zip !== null && row.zip !== undefined;
+      });
+
       setData(filteredData);
+
+      setTargetData(targetFilteredData);
 
       setWorking(false);
     });
@@ -58,6 +78,30 @@ const Sidebar = ({ mapData, setMapData, setLoading }) => {
     setLatAndLng(filteredData);
 
     setMapData(filteredData);
+
+    const targetPromises = targetData.map(async (row) => {
+      const response = await fetch(
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${row.zip}&key=AIzaSyCOGSsKzlKCe3BNTwbL2bjO1SYV4eU8H64`
+      );
+
+      const data = await response.json();
+
+      return {
+        zip: row.zip,
+        lat: data.results[0]?.geometry.location.lat,
+        lng: data.results[0]?.geometry.location.lng,
+      };
+    });
+
+    const newTargetData = await Promise.all(targetPromises);
+
+    const filteredTargetData = newTargetData.filter((row) => {
+      return row.lat !== undefined && row.lng !== undefined;
+    });
+
+    setTargetLatAndLng(filteredTargetData);
+
+    setTargetMapData(filteredTargetData);
 
     setLoading(false);
   };
