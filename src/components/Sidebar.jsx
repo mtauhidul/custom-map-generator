@@ -8,6 +8,8 @@ const Sidebar = ({
   setLoading,
   targetMapData,
   setTargetMapData,
+  rad,
+  setRad,
 }) => {
   const [data, setData] = useState([]);
   const [targetData, setTargetData] = useState([]);
@@ -118,6 +120,16 @@ const Sidebar = ({
             type='file'
             name='input'
             id='input'
+          />
+          <br />
+          <br />
+          <label htmlFor='inputNum'>Input radius (Miles)</label>
+          <input
+            value={rad}
+            onChange={(e) => setRad(e.target.value)}
+            type='number'
+            name='inputNum'
+            id='inputNum'
           />
         </div>
         <button onClick={getLatAndLng} disabled={working}>

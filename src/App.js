@@ -7,6 +7,7 @@ const App = () => {
   const [data, setData] = useState([]);
   const [targetData, setTargetData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [rad, setRad] = useState(10);
   return (
     <div className='mainContainer'>
       <Sidebar
@@ -15,8 +16,10 @@ const App = () => {
         targetMapData={targetData}
         setTargetMapData={setTargetData}
         setLoading={setLoading}
+        setRad={setRad}
+        rad={rad}
       />
-      <Map data={data} targetData={targetData} loading={loading} />
+      <Map data={data} targetData={targetData} loading={loading} rad={rad} />
     </div>
   );
 };

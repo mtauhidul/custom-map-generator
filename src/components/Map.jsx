@@ -4,11 +4,11 @@ import DummyMapImg from '../assets/map.jpg';
 import MainMap from './MainMap';
 import './Map.css';
 
-const Map = ({ data, targetData, loading }) => {
+const Map = ({ data, targetData, loading, rad }) => {
   return (
     <div className='mapContainer'>
       {data.length > 0 ? (
-        <MainMap data={data} targetData={targetData} />
+        <MainMap data={data} targetData={targetData} rad={rad} />
       ) : (
         <div>
           {loading ? (

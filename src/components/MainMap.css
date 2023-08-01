@@ -5,6 +5,7 @@
   border-radius: 50%;
   background-color: #000;
   border: 2px solid #fff;
+  opacity: 0.9;
   cursor: pointer;
   /* Prevents the marker from being highlighted */
   -webkit-user-select: none;
@@ -31,9 +32,9 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: orange;
+  background-color: rgb(255, 94, 0);
   /* Make transparent background */
-  opacity: 0.5;
+  opacity: 0.6;
 
   border: 3px solid green;
   cursor: pointer;

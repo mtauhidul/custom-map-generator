@@ -31,3 +31,12 @@
 .sidebarContainer button:hover {
   background-color: #666;
 }
+
+#inputNum {
+  width: 92%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+}
