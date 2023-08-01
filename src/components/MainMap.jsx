@@ -98,7 +98,7 @@ const MainMap = ({ data, targetData, rad }) => {
             offsetTop={-10}>
             <div
               className='targetMarker'
-              style={{ border: `3px solid ${markerGroup.color}` }}></div>
+              style={{ border: `5px solid ${markerGroup.color}` }}></div>
           </Marker>
           {markerGroup.nearbyPoints.map((row, innerIndex) => (
             <Marker
