@@ -25,14 +25,14 @@ const Sidebar = ({
 
       const newData = rows.map((row) => {
         return {
-          zip: row[7],
-          dre: row[8],
+          zip: row[0],
+          dre: row[1],
         };
       });
 
       const targetNewData = rows.map((row) => {
         return {
-          zip: row[16],
+          zip: row[2],
         };
       });
 
