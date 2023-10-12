@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Tooltip } from 'react-tooltip';
 import './App.css';
 import Map from './components/Map';
 import Sidebar from './components/Sidebar';
@@ -20,6 +21,7 @@ const App = () => {
         rad={rad}
       />
       <Map data={data} targetData={targetData} loading={loading} rad={rad} />
+      <Tooltip id='map-tooltip' />
     </div>
   );
 };
